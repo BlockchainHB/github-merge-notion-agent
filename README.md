@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/banner.png" alt="GitHub → Notion Changelog banner" />
+  <img src="docs/images/banner.png" alt="GitHub → Notion Changelog banner" width="920"/>
 </p>
 
 <h1 align="center">
@@ -11,8 +11,8 @@
 </p>
 
 <h4 align="center">
-  <a href="https://github.com/BlockchainHB/github-merge-notion-agent/stargazers">
-    <img src="https://img.shields.io/github/stars/BlockchainHB/github-merge-notion-agent?style=flat-square" alt="stars" style="height:20px;">
+  <a href="https://github.com/BlockchainHB/github-merge-notion-agent/releases">
+    <img src="https://img.shields.io/github/v/release/BlockchainHB/github-merge-notion-agent?display_name=tag&sort=semver&style=flat-square" alt="version" style="height:20px;">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-green.svg?style=flat-square" alt="license" style="height:20px;">
@@ -20,10 +20,20 @@
   <a href="https://github.com/marketplace/actions">
     <img src="https://img.shields.io/badge/GitHub%20Action-ready-blue?style=flat-square" alt="action" style="height:20px;">
   </a>
+  <br/>
+  <a href="#quick-start">
+    <img src="https://img.shields.io/badge/install-quick_start-00b894?style=flat-square" alt="install" style="height:20px;">
+  </a>
+  <a href="#demo">
+    <img src="https://img.shields.io/badge/see-demo-6c5ce7?style=flat-square" alt="demo" style="height:20px;">
+  </a>
+  <a href="#inputs">
+    <img src="https://img.shields.io/badge/configure-inputs-0984e3?style=flat-square" alt="inputs" style="height:20px;">
+  </a>
 </h4>
 
 <p align="center">
-  <img src="docs/images/notion-daily.png" alt="Daily Notion page example"/>
+  <img src="docs/images/notion-daily.png" alt="Daily Notion page example" width="900"/>
 </p>
 
 <p align="center">
@@ -38,12 +48,24 @@
 - 🔗 PRs auto‑commented with Notion links.
 - 🗂 Schema‑aware — auto‑detects Title/Date props.
 
-## Demo
+<p align="center">
+  <a href="https://openai.com/"><img src="https://img.shields.io/badge/OpenAI-supported-111?logo=openai&style=flat-square" alt="OpenAI"/></a>
+  <a href="https://www.notion.so/"><img src="https://img.shields.io/badge/Notion-ready-000?logo=notion&style=flat-square" alt="Notion"/></a>
+</p>
 
-![Flow diagram: GitHub → GPT → Notion](docs/images/flow.png)
-![PR comment with Notion link](docs/images/pr-comment.png)
+## Demo
+<a name="demo"></a>
+
+<p align="center">
+  <img src="docs/images/flow.png" alt="Flow diagram: GitHub → GPT → Notion" width="900"/>
+</p>
+
+<p align="center">
+  <img src="docs/images/pr-comment.png" alt="PR comment with Notion link" width="900"/>
+</p>
 
 ## Quick Start
+<a name="quick-start"></a>
 Requirements:
 - Notion integration: create one and invite it to your target database.
 - Notion database: has a Date property (e.g., `Date`) and a Title property (e.g., `Title`).
@@ -108,6 +130,7 @@ jobs:
 - 🙏 Be kind, concise, and security‑minded (no secrets in logs or examples).
 
 ## Inputs
+<a name="inputs"></a>
 - `timezone`: timezone for daily page buckets (default `America/New_York`)
 - `date_property`: Notion Date property name (default `Date`)
 - `title_property`: Notion Title property name (default `Title`)
