@@ -3,8 +3,6 @@ Turn merged PRs into a polished daily Notion changelog with one click.
 
 Summarize each merged pull request using GPT, append it to a single Notion page per day (timezone‑aware), and automatically comment back on the PR with the Notion link. Idempotent per PR and schema‑aware (auto‑detects Title/Date properties).
 
-Developed by Hasaam Bhatti 
-
 ## 2) Why You’ll Want It
 Keeping changelogs current is hard. This Action automatically turns merged PRs into clear, actionable entries in Notion. It uses OpenAI (GPT) to produce concise summaries, groups everything into a single page per day (configurable timezone), and avoids duplicates with idempotent markers. It’s database‑schema aware (auto‑detects your Date/Title property names), posts the Notion link on the PR, and works out‑of‑the‑box with just three secrets. Keywords: “GitHub Action Notion changelog,” “auto changelog,” “OpenAI GPT PR summary,” “daily Notion journal,” “merge to changelog”.
 
