@@ -6,6 +6,12 @@
   <i>Turn merged PRs into a polished daily Notion changelog — powered by GPT.</i>
 </p>
 
+<p align="center">
+  <a href="https://github.com/marketplace/actions/github-merge-notion-changelog" target="_blank">
+    <img alt="Get it on GitHub Marketplace" src="https://img.shields.io/badge/Get%20it%20on%20GitHub%20Marketplace-24292e?logo=github&logoColor=white&style=for-the-badge">
+  </a>
+</p>
+
 <h4 align="center">
   <a href="https://github.com/BlockchainHB/github-merge-notion-agent/releases">
     <img src="https://img.shields.io/github/v/release/BlockchainHB/github-merge-notion-agent?display_name=tag&sort=semver&style=flat-square" alt="version" style="height:20px;">
