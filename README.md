@@ -1,18 +1,49 @@
-# GitHub Merge → Notion Changelog
-Turn merged PRs into a polished daily Notion changelog with one click.
+<p align="center">
+  <img src="docs/images/banner.png" alt="GitHub → Notion Changelog banner" />
+</p>
 
-Summarize each merged pull request using GPT, append it to a single Notion page per day (timezone‑aware), and automatically comment back on the PR with the Notion link. Idempotent per PR and schema‑aware (auto‑detects Title/Date properties).
+<h1 align="center">
+  GitHub → Notion Changelog
+</h1>
 
-## 2) Why You’ll Want It
-Keeping changelogs current is hard. This Action automatically turns merged PRs into clear, actionable entries in Notion. It uses OpenAI (GPT) to produce concise summaries, groups everything into a single page per day (configurable timezone), and avoids duplicates with idempotent markers. It’s database‑schema aware (auto‑detects your Date/Title property names), posts the Notion link on the PR, and works out‑of‑the‑box with just three secrets. Keywords: “GitHub Action Notion changelog,” “auto changelog,” “OpenAI GPT PR summary,” “daily Notion journal,” “merge to changelog”.
+<p align="center">
+  <i>Turn merged PRs into a polished daily Notion changelog — powered by GPT.</i>
+</p>
 
-## 3) Visuals
+<h4 align="center">
+  <a href="https://github.com/BlockchainHB/github-merge-notion-agent/stargazers">
+    <img src="https://img.shields.io/github/stars/BlockchainHB/github-merge-notion-agent?style=flat-square" alt="stars" style="height:20px;">
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-green.svg?style=flat-square" alt="license" style="height:20px;">
+  </a>
+  <a href="https://github.com/marketplace/actions">
+    <img src="https://img.shields.io/badge/GitHub%20Action-ready-blue?style=flat-square" alt="action" style="height:20px;">
+  </a>
+</h4>
+
+<p align="center">
+  <img src="docs/images/notion-daily.png" alt="Daily Notion page example"/>
+</p>
+
+<p align="center">
+  Every merged pull request becomes a clean, AI‑summarized Notion entry. Grouped by day, timezone‑aware, schema‑aware, and auto‑linked back to your PR.
+</p>
+
+## Why Use This
+- ✨ Zero effort changelogs — every merge gets logged.
+- 🧠 GPT summaries that stay concise & actionable.
+- 📅 Daily pages (configurable timezone).
+- 🔄 Idempotent — no duplicate entries.
+- 🔗 PRs auto‑commented with Notion links.
+- 🗂 Schema‑aware — auto‑detects Title/Date props.
+
+## Demo
 
 ![Flow diagram: GitHub → GPT → Notion](docs/images/flow.png)
-![Daily Notion page example](docs/images/notion-daily.png)
 ![PR comment with Notion link](docs/images/pr-comment.png)
 
-## 4) Installation (User)
+## Quick Start
 Requirements:
 - Notion integration: create one and invite it to your target database.
 - Notion database: has a Date property (e.g., `Date`) and a Title property (e.g., `Title`).
@@ -21,7 +52,7 @@ Requirements:
   - `NOTION_DATABASE_ID`
   - `OPENAI_API_KEY`
 
-Add this workflow to your repo (works on merged PRs and supports manual runs):
+Add this workflow to your repo (runs on merged PRs and supports manual runs):
 
 ```yaml
 name: PR → Notion Changelog
@@ -65,17 +96,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-## 5) Developer Setup (Contributing)
-- Clone this repo and make changes under `scripts/` or `action.yml`.
-- Local run (optional): the script can be executed directly with env vars set (`NOTION_TOKEN`, `NOTION_DATABASE_ID`, `OPENAI_API_KEY`, `GITHUB_TOKEN`) and pointing to a PR number. For safer tests, use a future `date_override` (e.g., `2099-01-01`).
-- Testing in a sample repo: add the example workflow and point `uses:` to your branch or fork (e.g., `@feature-branch`).
-- Keep changes minimal, focused, and well‑described.
+## Developer Setup
+- Clone this repo and edit `scripts/` or `action.yml`.
+- Local run (optional): execute the script with env vars set (`NOTION_TOKEN`, `NOTION_DATABASE_ID`, `OPENAI_API_KEY`, `GITHUB_TOKEN`). Use a future `date_override` (e.g., `2099-01-01`) to avoid touching today’s page.
+- To test in another repo: point `uses:` to your branch (e.g., `@feature-branch`).
 
-## 6) Expectations for Contributors
-- Find a bug? Open an issue with clear steps to reproduce and logs (omit secrets).
-- Want a feature? Propose the interface (inputs/env) and rationale before coding.
-- Submit small PRs, include a brief test plan (e.g., manual dispatch with `pr_number`).
-- Be kind, concise, and security‑minded (no secrets in logs or examples).
+## Contributing
+- 🐛 Found a bug? Open an issue with steps + logs (omit secrets).
+- 💡 Want a feature? Propose interface + rationale first.
+- ✅ Submit small PRs with a quick test plan.
+- 🙏 Be kind, concise, and security‑minded (no secrets in logs or examples).
 
 ## Inputs
 - `timezone`: timezone for daily page buckets (default `America/New_York`)
