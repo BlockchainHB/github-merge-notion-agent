@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="docs/images/banner.png" alt="GitHub → Notion Changelog banner" width="920"/>
-</p>
-
 <h1 align="center">
   GitHub → Notion Changelog
 </h1>
