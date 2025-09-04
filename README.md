@@ -58,8 +58,6 @@ jobs:
           date_property: Date
           title_property: Title
           llm_model: gpt-4o
-          pr_number: ${{ inputs.pr_number }}
-          date_override: ${{ inputs.date_override }}
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
