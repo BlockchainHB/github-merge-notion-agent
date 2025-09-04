@@ -165,6 +165,3 @@ jobs:
 <p align="center">
   If this Action helps you ship cleaner changelogs, please star the repo and share it with your team.
 </p>
-
-## License
-MIT — see `LICENSE` for details.
