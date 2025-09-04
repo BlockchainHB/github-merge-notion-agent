@@ -1,0 +1,41 @@
+name: PR → Notion Changelog
+
+on:
+  pull_request:
+    types: [closed]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "PR number to summarize (for manual runs)"
+        required: false
+      date_override:
+        description: "Optional date (YYYY-MM-DD)"
+        required: false
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  changelog:
+    if: >-
+      ${{ (github.event_name == 'pull_request' && github.event.pull_request.merged == true) ||
+          (github.event_name == 'workflow_dispatch') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: PR → Notion Changelog
+        uses: BlockchainHB/github-merge-notion-agent@main
+        with:
+          timezone: America/New_York
+          date_property: Date
+          title_property: Title
+          llm_model: gpt-4o
+          pr_number: ${{ inputs.pr_number }}
+          date_override: ${{ inputs.date_override }}
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,66 @@
+name: "GitHub Merge → Notion Changelog"
+description: "Summarize merged PRs with GPT and append to a single daily Notion page; comments on the PR with the Notion link."
+author: "BlockchainHB"
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Install dependencies
+      shell: bash
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r $GITHUB_ACTION_PATH/requirements.txt
+    - name: Run PR → Notion sync
+      shell: bash
+      env:
+        NOTION_TOKEN: ${{ env.NOTION_TOKEN }}
+        NOTION_DATABASE_ID: ${{ env.NOTION_DATABASE_ID }}
+        OPENAI_API_KEY: ${{ env.OPENAI_API_KEY }}
+        GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
+        TIMEZONE: ${{ inputs.timezone }}
+        NOTION_DATE_PROPERTY: ${{ inputs.date_property }}
+        NOTION_TITLE_PROPERTY: ${{ inputs.title_property }}
+        LLM_MODEL: ${{ inputs.llm_model }}
+        DATE_OVERRIDE: ${{ inputs.date_override }}
+        PR_NUMBER_INPUT: ${{ inputs.pr_number }}
+      run: |
+        python $GITHUB_ACTION_PATH/scripts/run.py \
+          --repo "${GITHUB_REPOSITORY}" \
+          ${PR_NUMBER_INPUT:+--pr "$PR_NUMBER_INPUT"} \
+          --timezone "${TIMEZONE}" \
+          ${DATE_OVERRIDE:+--date "$DATE_OVERRIDE"} \
+          ${COMMENT_ON_PR:+} \
+          || exit 1
+inputs:
+  timezone:
+    description: "Timezone for daily page bucketing"
+    required: false
+    default: "America/New_York"
+  date_property:
+    description: "Notion Date property name"
+    required: false
+    default: "Date"
+  title_property:
+    description: "Notion Title property name"
+    required: false
+    default: "Title"
+  llm_model:
+    description: "OpenAI model ID"
+    required: false
+    default: "gpt-4o"
+  pr_number:
+    description: "PR number (when manually dispatching)"
+    required: false
+  date_override:
+    description: "Override date (YYYY-MM-DD) for testing"
+    required: false
+  comment_on_pr:
+    description: "Comment back on the PR with the Notion link"
+    required: false
+    default: "true"
+branding:
+  icon: "book-open"
+  color: "blue"
