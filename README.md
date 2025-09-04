@@ -148,10 +148,27 @@ jobs:
 - Model access: ensure your OpenAI key can use the chosen `llm_model`
 - Forked PRs: for public repos receiving fork PRs, consider `pull_request_target` with caution (secrets exposure)
 
-## 7) Connect
-Developed by Hasaam Bhatti — hasaamb.com · x.com/automatingwork
+## Connect
+<p align="center">
+  <b>Built by</b> <a href="https://hasaamb.com" target="_blank">Hasaam Bhatti</a>
+</p>
 
-If this Action helps you ship cleaner changelogs, please star the repo and share it with your team.
+<p align="center">
+  <a href="https://hasaamb.com" target="_blank">
+    <img alt="Website" src="https://img.shields.io/badge/hasaamb.com-0a84ff?style=for-the-badge&label=website&labelColor=0a84ff&color=0a84ff&logo=vercel&logoColor=white" />
+  </a>
+  <a href="https://x.com/automatingwork" target="_blank">
+    <img alt="Follow on X" src="https://img.shields.io/badge/@automatingwork-000?style=for-the-badge&logo=x&logoColor=white&label=follow&labelColor=000" />
+  </a>
+  <a href="https://github.com/BlockchainHB/github-merge-notion-agent/stargazers" target="_blank">
+    <img alt="Star on GitHub" src="https://img.shields.io/badge/star_repo-111?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  
+</p>
+
+<p align="center">
+  If this Action helps you ship cleaner changelogs, please star the repo and share it with your team.
+</p>
 
 ## License
 MIT — see `LICENSE` for details.
