@@ -103,3 +103,6 @@ jobs:
 Developed by Hasaam Bhatti — hasaamb.com · x.com/automatingwork
 
 If this Action helps you ship cleaner changelogs, please star the repo and share it with your team.
+
+## License
+MIT — see `LICENSE` for details.
